@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Test</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="{% static 'js/index.js' %}" defer></script>
+</head>
+<body data-host="{{ request.get_host }}" data-scheme="{{ request.scheme }}">
+    <div class="container">
+        <header>
+            <h1>Social Network</h1>
+        </header>
+        <main id="main">
+            <section class="message-form">
+                <form action="">
+                    <input type="text" name="author" id="message-form__author" class="message-form__author" placeholder="Name" required>
+                    <textarea name="message" id="message-form__text" cols="30" rows="10" class="message-form__text" required placeholder="Write your message here..."></textarea>
+                    <input type="submit" value="Send" class="message-form__submit" id="message-form__submit">
+                </form>
+            </section>
+            <section id="messages">
+                <div id="messages__list"></div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
